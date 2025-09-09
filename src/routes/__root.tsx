@@ -3,11 +3,11 @@ import { TanStackRouterDevtools } from '@tanstack/react-router-devtools';
 
 import { Layout } from '@/lib/layout';
 
-const title = 'Vite React Tailwind Starter';
-const description = 'app starter template';
-const url = 'https://vite-react-tailwind-starter.sznm.dev';
+const title = 'Kirill Dev';
+const description = 'Kirill Dev Home Page';
+const url = 'https://kirill.dev';
 const ogImgUrl =
-  'https://og.sznm.dev/api/generate?heading=vite-react-tailwind-starter&text=React+vite+template+with+TailwindCSS+and+TypeScript+setup.&template=color';
+  'https://og.sznm.dev/api/generate?heading=kirill-dev&text=Kirill+Dev&template=color';
 
 export const Route = createRootRoute({
   head: () => ({

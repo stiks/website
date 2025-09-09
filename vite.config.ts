@@ -14,7 +14,7 @@ const pwaOptions: Partial<VitePWAOptions> = {
   base: '/',
   manifest: {
     short_name: 'vite-react-tailwind-starter',
-    name: 'Vite React App Template',
+    name: 'Kirill Dev',
     theme_color: '#000000',
     lang: 'en',
     start_url: '/',
