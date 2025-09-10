@@ -2,7 +2,7 @@
 PACKAGES=`go list ./...`
 
 dev:
-	@pnpm dev
+	@pnpm dev --host
 
 build:
 	@pnpm build
