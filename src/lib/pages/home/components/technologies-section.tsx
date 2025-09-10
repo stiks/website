@@ -8,23 +8,23 @@ interface Technology {
 const technologies: Array<Technology> = [
   {
     name: 'React',
-    icon: '/src/lib/icons/React.svg',
+    icon: '/assets/icons/React.svg',
   },
   {
     name: 'TypeScript',
-    icon: '/src/lib/icons/TypeScript.svg',
+    icon: '/assets/icons/TypeScript.svg',
   },
   {
     name: 'MySQL',
-    icon: '/src/lib/icons/MySQL.svg',
+    icon: '/assets/icons/MySQL.svg',
   },
   {
     name: 'Docker',
-    icon: '/src/lib/icons/Docker.svg',
+    icon: '/assets/icons/Docker.svg',
   },
   {
     name: 'Golang',
-    icon: '/src/lib/icons/Go.svg',
+    icon: '/assets/icons/Go.svg',
   },
 ];
 
