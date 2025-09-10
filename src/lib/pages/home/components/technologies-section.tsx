@@ -64,7 +64,7 @@ export const TechnologiesSection = ({
           TECHNOLOGIES
         </h2>
       </div>
-      <div className="grid gap-1 grid-cols-8 sm:grid-cols-9 md:grid-cols-9 lg:grid-cols-10 xl:grid-cols-10">
+      <div className="grid gap-1 grid-cols-6 sm:grid-cols-9 md:grid-cols-9 lg:grid-cols-10 xl:grid-cols-10">
         {technologies.map((technology) => (
           <TechnologyCard key={technology.name} technology={technology} />
         ))}
