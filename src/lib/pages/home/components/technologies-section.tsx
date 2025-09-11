@@ -7,24 +7,56 @@ interface Technology {
 
 const technologies: Array<Technology> = [
   {
-    name: 'React',
-    icon: '/assets/icons/React.svg',
+    name: 'Golang',
+    icon: '/assets/icons/Go.svg',
   },
   {
     name: 'TypeScript',
     icon: '/assets/icons/TypeScript.svg',
   },
   {
+    name: 'Python',
+    icon: '/assets/icons/Python.svg',
+  },
+  {
+    name: 'PHP',
+    icon: '/assets/icons/PHP.svg',
+  },
+  {
+    name: 'React',
+    icon: '/assets/icons/React.svg',
+  },
+  {
+    name: 'PostgresSQL',
+    icon: '/assets/icons/PostgresSQL.svg',
+  },
+  {
     name: 'MySQL',
     icon: '/assets/icons/MySQL.svg',
+  },
+  {
+    name: 'MongoDB',
+    icon: '/assets/icons/MongoDB.svg',
+  },
+  {
+    name: 'Kubernetes',
+    icon: '/assets/icons/Kubernetes.svg',
   },
   {
     name: 'Docker',
     icon: '/assets/icons/Docker.svg',
   },
   {
-    name: 'Golang',
-    icon: '/assets/icons/Go.svg',
+    name: 'Google Cloud',
+    icon: '/assets/icons/GoogleCloud.svg',
+  },
+  {
+    name: 'AWS',
+    icon: '/assets/icons/AWS.svg',
+  },
+  {
+    name: 'Azure',
+    icon: '/assets/icons/Azure.svg',
   },
 ];
 
