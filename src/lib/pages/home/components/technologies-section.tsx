@@ -39,7 +39,7 @@ const TechnologyCard = ({ technology }: TechnologyCardProps) => (
         <img
           src={technology.icon}
           alt={technology.name}
-          className="group-hover:-translate-y-1 size-8 transition-all duration-300"
+          className="group-hover:grayscale-0 grayscale dark:brightness-100 size-8 lg:size-10 transition-all duration-300"
         />
       ) : (
         technology.icon

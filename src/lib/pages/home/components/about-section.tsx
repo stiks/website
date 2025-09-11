@@ -32,33 +32,23 @@ export const AboutSection = ({ className }: AboutProps) => {
         </p>
       </div>
       <div
-        className={`space-y-4 text-sm overflow-hidden transition-all duration-700 ease-in mb-2 ${
+        className={`space-y-4 text-sm overflow-hidden transition-all duration-500 ease-in mb-2 ${
           isExpanded ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'
         }`}
       >
-        <div>
-          <p>
-            I hold a Bachelor's degree in Mechanical Engineering from the École
-            Polytechnique de Lomé (EPL). Over the past year, I have transitioned
-            into the field of computer science, driven by my passion for
-            technology and problem-solving. I am currently pursuing a two-year
-            Master's degree in Artificial Intelligence and Big Data at the
-            Collège de Paris Supérieur, where I am further deepening my
-            expertise in cutting-edge technologies.
-          </p>
-        </div>
-        <div>
-          <p>
-            When I'm not coding, I spend my time listening to music, reading
-            books, working out at the gym, and playing games or enjoying
-            manga/anime.
-          </p>
-        </div>
+        <p>
+          I hold a Bachelor's degree in Computer Science from St. Petersburg
+          State Polytechnical University
+        </p>
+        <p>
+          When I'm not coding, I spend my time listening to music, reading
+          books, working out at the gym, and playing games
+        </p>
       </div>
       <button
         type="button"
         onClick={toggleExpanded}
-        className="flex items-center gap-2 text-sm text-zinc-500 hover:text-zinc-300 transition-colors mb-4"
+        className="flex items-center gap-2 text-sm text-zinc-900 hover:text-zinc-300 transition-colors mb-4"
       >
         <ChevronDownIcon
           className={`h-4 w-4 transition-transform ${isExpanded ? 'rotate-180' : ''}`}

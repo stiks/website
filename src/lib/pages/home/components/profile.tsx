@@ -18,25 +18,19 @@ export const ProfileSection = ({ className }: ProfileSectionProps) => {
               <h1 className="text-md md:text-4xl font-bold font-heading">
                 Hi,{' '}
                 <div className="tracking-[-0.02em] inline-block m-0">
-                  I'm Kirill Garbar
+                  I'm Kirill
                 </div>
               </h1>
               <p className="text-muted-foreground max-w-md font-light text-sm md:text-sm">
-                a self-taught fullstack developer, specializing in building
-                scalable and efficient backend systems.
+                executive technology leader with 10+ years building and scaling
+                high-performing engineering organizations, defining product and
+                platform strategy, and owning architectural direction for
+                mission-critical systems.
               </p>
               <span className="relative mt-2 text-xs md:text-sm font-medium inline-flex items-center text-black-400 dark:text-zinc-200">
                 England
               </span>
             </div>
-            {/*<div className="flex items-center justify-center sm:max-md:visible">*/}
-            {/*  <div className="absolute -inset-4 bg-gradient-to-r from-blue-500/20 to-purple-500/20  blur-2xl rounded-full animate-pulse" />*/}
-            {/*  <img*/}
-            {/*    alt="Profile"*/}
-            {/*    className="aspect-square rounded-2xl bg-zinc-100 object-cover object-top dark:bg-zinc-800 size-48 lg:size-48 sm:size-48 relative overflow-hidden border-2 border-white/10 shadow-[0_0_15px_rgba(0,0,0,0.3)] transform transition-transform hover:scale-105"*/}
-            {/*    src="/assets/portrait.png"*/}
-            {/*  />*/}
-            {/*</div>*/}
           </div>
 
           <div className="flex items-center mt-4 gap-4">
