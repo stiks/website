@@ -11,8 +11,8 @@ const Home = () => {
   return (
     <>
       <ProfileSection className={maxResolution} />
-      <AboutSection className={maxResolution} />
       <TechnologiesSection className={maxResolution} />
+      <AboutSection className={maxResolution} />
       <CareerSection className={maxResolution} />
       <ProjectsSection className={maxResolution} />
       <ConnectSection className={maxResolution} />

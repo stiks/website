@@ -64,16 +64,17 @@ const technologies: Array<Technology> = [
 
 interface TechnologyCardProps {
   technology: Technology;
+  grayscale?: boolean;
 }
 
-const TechnologyCard = ({ technology }: TechnologyCardProps) => (
+const TechnologyCard = ({ technology, grayscale }: TechnologyCardProps) => (
   <div className="rounded-xl border bg-card text-card-foreground shadow">
     <div className="group flex aspect-square select-none flex-col items-center justify-center">
       {typeof technology.icon === 'string' ? (
         <img
           src={technology.icon}
           alt={technology.name}
-          className="group-hover:grayscale-0 grayscale dark:brightness-100 size-10 lg:size-10 transition-all duration-300"
+          className={`dark:brightness-100 size-10 lg:size-10 transition-all duration-300 dark:grayscale ${grayscale ? 'grayscale group-hover:grayscale-0' : ''}`}
         />
       ) : (
         technology.icon
@@ -87,9 +88,11 @@ const TechnologyCard = ({ technology }: TechnologyCardProps) => (
 
 interface TechnologiesSectionProps {
   className?: string;
+  grayscale?: boolean;
 }
 export const TechnologiesSection = ({
   className,
+  grayscale,
 }: TechnologiesSectionProps) => {
   return (
     <section className={`mx-auto p-4 ${className || ''}`}>
@@ -97,7 +100,11 @@ export const TechnologiesSection = ({
 
       <div className="grid gap-1 grid-cols-6 sm:grid-cols-9 md:grid-cols-9 lg:grid-cols-10 xl:grid-cols-10">
         {technologies.map((technology) => (
-          <TechnologyCard key={technology.name} technology={technology} />
+          <TechnologyCard
+            key={technology.name}
+            technology={technology}
+            grayscale={grayscale}
+          />
         ))}
       </div>
     </section>
