@@ -18,11 +18,13 @@
 /*             '950': '#431e05',*/
 /*             },*/
 
-/*@theme static {*/
-/*  --color-primary: #fdf5c8;*/
-/*  --color-secondary: #d9840c;*/
-/*  --color-accent: #753b12;*/
-/*}*/
+@theme static {
+  --color-primary: var(--color-emerald-600);
+  --color-primary-light: oklch(0.508 0.118 165.612);
+  --color-primary-dark: oklch(0.508 0.118 165.612);
+  /*  --color-secondary: #d9840c;*/
+  /*  --color-accent: #753b12;*/
+}
 
 body {
   @apply m-0;

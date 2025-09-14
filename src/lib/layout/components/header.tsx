@@ -3,7 +3,7 @@ import { ThemeToggle } from '@/lib/components/theme-toggle';
 export const Header = () => {
   return (
     <header className="sticky top-0 z-50 bg-background">
-      <section className="max-w-4xl mx-auto p-4 flex items-center justify-between py-2 mb-10">
+      <section className="max-w-5xl mx-auto p-4 flex items-center justify-between py-2 mb-10">
         <div className="text-primary text-xl md:text-2xl font-bold font-caption">
           <a href="/">Kirill Garbar</a>
         </div>

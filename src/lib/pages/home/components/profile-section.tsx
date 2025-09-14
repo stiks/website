@@ -35,7 +35,7 @@ export const ProfileSection = ({ className }: ProfileSectionProps) => {
 
           <div className="flex items-center mt-4 gap-4">
             <a
-              className="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 border border-input shadow-sm hover:bg-accent hover:text-accent-foreground py-2 bg-primary w-auto h-8 px-4"
+              className="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 border border-input shadow-sm hover:bg-accent hover:text-accent-foreground py-2 bg-emerald-500 border-emerald-800 ring-emerald-300 ring-3 w-auto h-8 px-4"
               href="https://docs.google.com/document/d/1NVnYW6wxVDxGdR2R_Wt7FYabUQrDONgY6CZfyaUvtTY/view"
             >
               Resume

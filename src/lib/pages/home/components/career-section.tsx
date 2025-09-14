@@ -40,9 +40,9 @@ function TimelineItem({ entry }: { entry: TimelineEntry }) {
           <Link
             to="/career/$slug"
             params={{ slug: entry.slug }}
-            className="group inline-flex items-center gap-1.5 rounded-full bg-zinc-50/80 dark:bg-zinc-800/40 px-3 py-1.5 text-xs font-medium text-zinc-700 dark:text-zinc-200 ring-1 ring-zinc-200/80 dark:ring-zinc-700/60 hover:bg-zinc-100 dark:hover:bg-zinc-800 transition-colors"
+            className="group inline-flex items-center gap-1.5 rounded bg-zinc-50/80 dark:bg-zinc-800/40 px-3 py-1.5 text-xs font-medium text-zinc-700 dark:text-zinc-200 ring-1 ring-zinc-200/80 dark:ring-zinc-700/60 hover:bg-zinc-100 dark:hover:bg-zinc-800 transition-colors"
           >
-            View role
+            Details
             <span
               className="transition-transform group-hover:translate-x-0.5"
               aria-hidden

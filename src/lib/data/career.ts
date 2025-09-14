@@ -40,6 +40,13 @@ const RAW_ENTRIES: Array<Omit<TimelineEntry, 'slug'>> = [
       'Kubernetes',
     ],
   },
+  {
+    period: '2010 - 2011',
+    title: 'Team Lead',
+    company: 'Connection2',
+    description: 'TBC',
+    technologies: ['PHP', 'Golang', 'Cisco', 'VOIP'],
+  },
 ];
 
 export const CAREER_ENTRIES: Array<TimelineEntry> = RAW_ENTRIES.map((e) => ({
