@@ -68,18 +68,18 @@ interface TechnologyCardProps {
 }
 
 const TechnologyCard = ({ technology, grayscale }: TechnologyCardProps) => (
-  <div className="rounded-xl border bg-card text-card-foreground shadow">
-    <div className="group flex aspect-square select-none flex-col items-center justify-center">
+  <div className="rounded-xl border bg-card text-card-foreground shadow transition-all duration-300 hover:shadow-lg">
+    <div className="group flex aspect-square select-none flex-col items-center justify-center p-1 sm:p-2">
       {typeof technology.icon === 'string' ? (
         <img
           src={technology.icon}
           alt={technology.name}
-          className={`dark:brightness-100 size-10 lg:size-10 transition-all duration-300 dark:grayscale ${grayscale ? 'grayscale group-hover:grayscale-0' : ''}`}
+          className={`dark:brightness-100 size-8 sm:size-12 md:size-16 lg:size-20 xl:size-24 transition-all duration-300 dark:grayscale ${grayscale ? 'grayscale group-hover:grayscale-0' : ''}`}
         />
       ) : (
         technology.icon
       )}
-      <div className="mt-3 text-xs text-muted-foreground">
+      <div className="mt-1 sm:mt-2 text-[10px] sm:text-xs text-muted-foreground text-center leading-tight">
         {technology.name}
       </div>
     </div>
@@ -98,7 +98,7 @@ export const TechnologiesSection = ({
     <section className={`mx-auto p-4 ${className || ''}`}>
       <SectionHeading id="technologies">Technologies</SectionHeading>
 
-      <div className="grid gap-1 grid-cols-6 sm:grid-cols-9 md:grid-cols-9 lg:grid-cols-10 xl:grid-cols-10">
+      <div className="grid gap-1 sm:gap-2 grid-cols-5 xs:grid-cols-6 sm:grid-cols-7 md:grid-cols-8 lg:grid-cols-9 xl:grid-cols-8 2xl:grid-cols-9">
         {technologies.map((technology) => (
           <TechnologyCard
             key={technology.name}
