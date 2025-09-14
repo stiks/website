@@ -35,8 +35,12 @@ export const ProfileSection = ({ className }: ProfileSectionProps) => {
 
           <div className="flex items-center mt-4 gap-4">
             <a
-              className="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 border border-input shadow-sm hover:bg-accent hover:text-accent-foreground py-2 bg-emerald-500 border-emerald-800 ring-emerald-300 ring-3 w-auto h-8 px-4"
+              className="inline-flex items-center justify-center gap-2 rounded px-5 py-2.5 h-10 w-auto text-sm font-semibold text-white bg-emerald-600 shadow-md transition-colors duration-200 hover:bg-emerald-500 hover:shadow-lg active:bg-emerald-700 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-400 focus-visible:ring-offset-2 dark:focus-visible:ring-offset-zinc-900"
               href="https://docs.google.com/document/d/1NVnYW6wxVDxGdR2R_Wt7FYabUQrDONgY6CZfyaUvtTY/view"
+              target="_blank"
+              rel="noopener noreferrer"
+              title="Open resume in a new tab"
+              aria-label="Open resume in a new tab"
             >
               Resume
             </a>

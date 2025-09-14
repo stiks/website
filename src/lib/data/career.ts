@@ -7,15 +7,7 @@ export interface TimelineEntry {
   slug: string;
 }
 
-function slugify(input: string) {
-  return input
-    .toLowerCase()
-    .replace(/[@&]/g, ' ')
-    .replace(/[^a-z0-9]+/g, '-')
-    .replace(/(^-|-$)/g, '');
-}
-
-const RAW_ENTRIES: Array<Omit<TimelineEntry, 'slug'>> = [
+export const CAREER_ENTRIES: Array<TimelineEntry> = [
   {
     period: '2021 - Present',
     title: 'Head of Engineering',
@@ -23,6 +15,7 @@ const RAW_ENTRIES: Array<Omit<TimelineEntry, 'slug'>> = [
     description:
       'As Head of Engineering, I led the technical and strategic transformation of an AI-driven proof-of-concept into a commercially successful, multi-million-dollar rail inspection system. I built the engineering organization from the ground up, establishing the teams, processes, and technology to enable rapid and sustainable business growth.',
     technologies: ['Golang', 'Python', 'PostgreSQL', 'Even Driven', 'GCP'],
+    slug: 'crosstech',
   },
   {
     period: '2011 - 2021',
@@ -39,6 +32,7 @@ const RAW_ENTRIES: Array<Omit<TimelineEntry, 'slug'>> = [
       'Microservices',
       'Kubernetes',
     ],
+    slug: 'quintessentially',
   },
   {
     period: '2010 - 2011',
@@ -46,13 +40,9 @@ const RAW_ENTRIES: Array<Omit<TimelineEntry, 'slug'>> = [
     company: 'Connection2',
     description: 'TBC',
     technologies: ['PHP', 'Golang', 'Cisco', 'VOIP'],
+    slug: 'connection2',
   },
 ];
-
-export const CAREER_ENTRIES: Array<TimelineEntry> = RAW_ENTRIES.map((e) => ({
-  ...e,
-  slug: slugify(`${e.title}-${e.company}`),
-}));
 
 export function getCareerEntryBySlug(slug: string) {
   return CAREER_ENTRIES.find((e) => e.slug === slug);
