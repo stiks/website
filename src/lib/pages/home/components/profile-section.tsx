@@ -9,10 +9,10 @@ export const ProfileSection = ({ className }: ProfileSectionProps) => {
   return (
     <section className={`mx-auto p-4 py-8 relative ${className || ''}`}>
       <div
-        className="flex flex-col lg:flex-row items-center justify-between gap-12 lg:gap-16"
+        className="flex flex-col md:flex-row items-center justify-between gap-12 md:gap-32"
         style={{ opacity: 1 }}
       >
-        <div className="w-full lg:w-1/2 text-left space-y-8">
+        <div className="w-full md:w-1/2 text-left space-y-8">
           <div className="flex items-start justify-between">
             <div className="space-y-1">
               <h1 className="text-md md:text-4xl font-bold font-heading">
@@ -57,7 +57,7 @@ export const ProfileSection = ({ className }: ProfileSectionProps) => {
           </div>
         </div>
         <div
-          className="w-full lg:w-1/2 relative hidden lg:block"
+          className="w-full md:w-1/2 relative hidden md:block"
           style={{ opacity: 1, transform: 'none' }}
         >
           <div className="relative aspect-square max-w-lg mx-auto">
