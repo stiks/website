@@ -71,7 +71,7 @@ export const CareerSection = ({ className, ...props }: CareerSectionProps) => {
     <section
       className={cx(
         'mx-auto p-4 py-4 relative',
-        'bg-gradient-to-br from-slate-50 to-white dark:from-zinc-900 dark:to-zinc-950 rounded-2xl',
+        'bg-gradient-to-br from-slate-50 to-white dark:from-zinc-900 dark:to-zinc-950 lg:rounded-2xl',
         className,
       )}
       {...props}
