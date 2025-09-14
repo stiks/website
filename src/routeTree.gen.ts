@@ -9,38 +9,64 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
+import { Route as CareerRouteImport } from './routes/career'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as CareerSlugRouteImport } from './routes/career/$slug'
 
+const CareerRoute = CareerRouteImport.update({
+  id: '/career',
+  path: '/career',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const CareerSlugRoute = CareerSlugRouteImport.update({
+  id: '/$slug',
+  path: '/$slug',
+  getParentRoute: () => CareerRoute,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/career': typeof CareerRouteWithChildren
+  '/career/$slug': typeof CareerSlugRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/career': typeof CareerRouteWithChildren
+  '/career/$slug': typeof CareerSlugRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/career': typeof CareerRouteWithChildren
+  '/career/$slug': typeof CareerSlugRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/'
+  fullPaths: '/' | '/career' | '/career/$slug'
   fileRoutesByTo: FileRoutesByTo
-  to: '/'
-  id: '__root__' | '/'
+  to: '/' | '/career' | '/career/$slug'
+  id: '__root__' | '/' | '/career' | '/career/$slug'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  CareerRoute: typeof CareerRouteWithChildren
 }
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
+    '/career': {
+      id: '/career'
+      path: '/career'
+      fullPath: '/career'
+      preLoaderRoute: typeof CareerRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/': {
       id: '/'
       path: '/'
@@ -48,11 +74,30 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/career/$slug': {
+      id: '/career/$slug'
+      path: '/$slug'
+      fullPath: '/career/$slug'
+      preLoaderRoute: typeof CareerSlugRouteImport
+      parentRoute: typeof CareerRoute
+    }
   }
 }
 
+interface CareerRouteChildren {
+  CareerSlugRoute: typeof CareerSlugRoute
+}
+
+const CareerRouteChildren: CareerRouteChildren = {
+  CareerSlugRoute: CareerSlugRoute,
+}
+
+const CareerRouteWithChildren =
+  CareerRoute._addFileChildren(CareerRouteChildren)
+
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  CareerRoute: CareerRouteWithChildren,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
