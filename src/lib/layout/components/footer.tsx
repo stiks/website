@@ -4,7 +4,7 @@ import { LinkedInIcon } from '@/lib/components/linkedin-icon.tsx';
 export const Footer = () => {
   return (
     <footer>
-      <section className="max-w-4xl mx-auto p-4 py-4 border-t-1 border-border flex justify-between">
+      <section className="max-w-5xl mx-auto p-4 py-4 border-t-1 border-border flex justify-between">
         <div className="flex flex-col items-center justify-center">
           <p>© {new Date().getFullYear()} Kirill Garbar</p>
         </div>
