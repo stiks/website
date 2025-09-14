@@ -21,7 +21,7 @@ export const ProfileSection = ({ className }: ProfileSectionProps) => {
                   I'm Kirill
                 </div>
               </h1>
-              <p className="text-muted-foreground max-w-md font-light text-sm md:text-sm">
+              <p className="text-muted-foreground max-w-md font-light">
                 executive technology leader with 10+ years building and scaling
                 high-performing engineering organizations, defining product and
                 platform strategy, and owning architectural direction for

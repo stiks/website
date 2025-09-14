@@ -1,3 +1,5 @@
+import { SectionHeading } from '@/lib/components/section-heading';
+
 interface ConnectSectionProps {
   className?: string;
 }
@@ -5,11 +7,8 @@ interface ConnectSectionProps {
 export const ConnectSection = ({ className }: ConnectSectionProps) => {
   return (
     <section className={`mx-auto p-4 ${className || ''}`}>
-      <div className="mb-4" id="contact">
-        <h2 className="text-xs font-semibold uppercase tracking-wider text-primary font-heading">
-          Let's connect
-        </h2>
-      </div>
+      <SectionHeading id="contact">Let's connect</SectionHeading>
+
       <div className="space-y-4 flex flex-col items-center">
         <div>
           <p>

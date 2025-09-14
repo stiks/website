@@ -1,15 +1,21 @@
 import { AboutSection } from '@/lib/pages/home/components/about-section';
+import { CareerSection } from '@/lib/pages/home/components/career-section';
 import { ConnectSection } from '@/lib/pages/home/components/connect-section';
 import { ProfileSection } from '@/lib/pages/home/components/profile-section';
+import { ProjectsSection } from '@/lib/pages/home/components/projects-section';
 import { TechnologiesSection } from '@/lib/pages/home/components/technologies-section';
 
 const Home = () => {
+  const maxResolution = 'max-w-5xl';
+
   return (
     <>
-      <ProfileSection className="max-w-4xl" />
-      <AboutSection className="max-w-4xl" />
-      <TechnologiesSection className="max-w-4xl" />
-      <ConnectSection className="max-w-4xl" />
+      <ProfileSection className={maxResolution} />
+      <AboutSection className={maxResolution} />
+      <TechnologiesSection className={maxResolution} />
+      <CareerSection className={maxResolution} />
+      <ProjectsSection className={maxResolution} />
+      <ConnectSection className={maxResolution} />
     </>
   );
 };

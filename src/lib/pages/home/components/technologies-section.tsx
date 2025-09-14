@@ -1,5 +1,7 @@
 import type React from 'react';
 
+import { SectionHeading } from '@/lib/components/section-heading.tsx';
+
 interface Technology {
   name: string;
   icon: React.ReactNode | string;
@@ -91,11 +93,8 @@ export const TechnologiesSection = ({
 }: TechnologiesSectionProps) => {
   return (
     <section className={`mx-auto p-4 ${className || ''}`}>
-      <div className="mb-4">
-        <h2 className="text-xs font-semibold uppercase tracking-wider text-primary font-heading">
-          TECHNOLOGIES
-        </h2>
-      </div>
+      <SectionHeading id="technologies">Technologies</SectionHeading>
+
       <div className="grid gap-1 grid-cols-6 sm:grid-cols-9 md:grid-cols-9 lg:grid-cols-10 xl:grid-cols-10">
         {technologies.map((technology) => (
           <TechnologyCard key={technology.name} technology={technology} />

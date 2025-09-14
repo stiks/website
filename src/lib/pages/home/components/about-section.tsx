@@ -1,6 +1,7 @@
 import { useState } from 'react';
 
-import { ChevronDownIcon } from '../../../components/chevron-down-icon.tsx';
+import { ChevronDownIcon } from '@/lib/components/chevron-down-icon';
+import { SectionHeading } from '@/lib/components/section-heading';
 
 interface AboutProps {
   className?: string;
@@ -15,12 +16,8 @@ export const AboutSection = ({ className }: AboutProps) => {
 
   return (
     <section className={`mx-auto p-4 ${className || ''}`}>
-      <div className="mb-4" id="about">
-        <h2 className="text-xs font-semibold uppercase tracking-wider text-primary font-heading">
-          About Me
-        </h2>
-      </div>
-      <div className="text-sm mb-4">
+      <SectionHeading id="about">About Me</SectionHeading>
+      <div className="mb-4">
         <p>
           A strategic and results-driven technology leader with over a decade of
           experience in product-led businesses, building and scaling
@@ -32,7 +29,7 @@ export const AboutSection = ({ className }: AboutProps) => {
         </p>
       </div>
       <div
-        className={`space-y-4 text-sm overflow-hidden transition-all duration-500 ease-in mb-2 ${
+        className={`space-y-4 overflow-hidden transition-all duration-500 ease-in mb-2 ${
           isExpanded ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'
         }`}
       >
