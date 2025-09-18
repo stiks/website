@@ -3,6 +3,7 @@ export interface Project {
   description?: string;
   technologies?: Array<string>;
   dead?: boolean;
+  slug: string;
 }
 
 export interface Responsibility {
@@ -33,16 +34,19 @@ export const CAREER_ENTRIES: Array<TimelineEntry> = [
     projects: [
       {
         name: 'Hubble',
+        slug: 'hubble',
         description:
           'Led the re-architecture of the main product from a Laravel prototype to a scalable, Go-based system on GCP. Implemented a decoupled architecture and automated deployments, delivering near-real-time analytics for critical rail safety.',
       },
       {
         name: 'Poler',
+        slug: 'poler',
         description:
           'Directed the design and development of a real-time train tracking and alerting system processing over 10,000 notifications per minute, enhancing operational response with instant alerts.',
       },
       {
         name: 'CrossFreight',
+        slug: 'crossfreight',
         description:
           'Oversaw the creation of a freight analytics platform to monitor over 16 million events annually, providing essential data for operational compliance and performance monitoring.',
       },
@@ -136,9 +140,11 @@ export const CAREER_ENTRIES: Array<TimelineEntry> = [
     projects: [
       {
         name: 'QHub',
+        slug: 'qhub',
       },
       {
         name: 'Q Apps',
+        slug: 'qapps',
       },
     ],
   },
