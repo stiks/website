@@ -10,11 +10,22 @@ type ThemeProviderProps = {
 
 type ThemeProviderState = {
   theme: Theme;
+  resolvedTheme: Exclude<Theme, 'system'>;
   setTheme: (theme: Theme) => void;
+};
+
+const getSystemTheme = (): Exclude<Theme, 'system'> => {
+  if (typeof window !== 'undefined') {
+    return window.matchMedia('(prefers-color-scheme: dark)').matches
+      ? 'dark'
+      : 'light';
+  }
+  return 'light';
 };
 
 const initialState: ThemeProviderState = {
   theme: 'system',
+  resolvedTheme: 'light',
   setTheme: () => null,
 };
 
@@ -30,29 +41,53 @@ export function ThemeProvider({
     () => (localStorage.getItem(storageKey) as Theme) || defaultTheme,
   );
 
+  // Track system preference so resolvedTheme updates when OS theme changes
+  const [systemTheme, setSystemTheme] = useState<Exclude<Theme, 'system'>>(
+    getSystemTheme(),
+  );
+
+  useEffect(() => {
+    // biome-ignore lint/style/useBlockStatements: whatever
+    if (typeof window === 'undefined') return;
+
+    const mql = window.matchMedia('(prefers-color-scheme: dark)');
+    const handler = (e: MediaQueryListEvent) => {
+      setSystemTheme(e.matches ? 'dark' : 'light');
+    };
+
+    if (typeof mql.addEventListener === 'function') {
+      mql.addEventListener('change', handler);
+    } else {
+      // Safari
+      // @ts-ignore @ts-expect-error - legacy API fallback
+      mql.addListener(handler);
+    }
+
+    return () => {
+      if (typeof mql.removeEventListener === 'function') {
+        mql.removeEventListener('change', handler);
+      } else {
+        // Safari
+        // @ts-ignore @ts-expect-error - legacy API fallback
+        mql.removeListener(handler);
+      }
+    };
+  }, []);
+
+  const resolvedTheme: Exclude<Theme, 'system'> =
+    theme === 'system' ? systemTheme : theme;
+
+  // Apply the effective theme class to the root element
   useEffect(() => {
     const root = window.document.documentElement;
-
     root.classList.remove('light', 'dark');
-
-    if (theme === 'system') {
-      const systemTheme = window.matchMedia('(prefers-color-scheme: dark)')
-        .matches
-        ? 'dark'
-        : 'light';
-
-      root.classList.add(systemTheme);
-      return;
-    }
-
-    if (theme === 'light' || theme === 'dark') {
-      root.classList.add(theme);
-    }
-  }, [theme]);
+    root.classList.add(resolvedTheme);
+  }, [resolvedTheme]);
 
   const value = useMemo(
     () => ({
       theme,
+      resolvedTheme,
       setTheme: (newTheme: Theme) => {
         if (
           newTheme === 'light' ||
@@ -64,7 +99,7 @@ export function ThemeProvider({
         }
       },
     }),
-    [storageKey, theme],
+    [storageKey, theme, resolvedTheme],
   );
 
   return (
