@@ -136,11 +136,9 @@ export const CAREER_ENTRIES: Array<TimelineEntry> = [
     projects: [
       {
         name: 'QHub',
-        description: '',
       },
       {
         name: 'Q Apps',
-        description: '',
       },
     ],
   },
