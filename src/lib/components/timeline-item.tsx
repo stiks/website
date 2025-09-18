@@ -1,13 +1,7 @@
 import { Link } from '@tanstack/react-router';
 
+import { TechPill } from '@/lib/components/tech-pill';
 import type { TimelineEntry } from '@/lib/data/career.ts';
-
-const TECH_PILL_CLASS =
-  'px-2.5 py-1 rounded-full text-xs font-medium bg-emerald-50 text-emerald-700 ring-1 ring-emerald-200/60 dark:bg-emerald-950/30 dark:text-emerald-300 dark:ring-emerald-900/50 hover:bg-emerald-100/80 dark:hover:bg-emerald-900/30 transition-colors';
-
-function TechPill({ label }: { label: string }) {
-  return <span className={TECH_PILL_CLASS}>{label}</span>;
-}
 
 export function TimelineItem({ entry }: { entry: TimelineEntry }) {
   return (
