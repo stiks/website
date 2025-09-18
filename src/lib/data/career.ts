@@ -177,3 +177,45 @@ export const CAREER_ENTRIES: Array<TimelineEntry> = [
 export function getCareerEntryBySlug(slug: string) {
   return CAREER_ENTRIES.find((e) => e.slug === slug);
 }
+
+export interface ProjectWithContext extends Project {
+  company: string;
+  companySlug: string;
+  period: string;
+  roleTitle: string;
+}
+
+export function getAllProjects(): Array<ProjectWithContext> {
+  const projects: Array<ProjectWithContext> = [];
+  for (const entry of CAREER_ENTRIES) {
+    for (const p of entry.projects ?? []) {
+      projects.push({
+        ...p,
+        company: entry.company,
+        companySlug: entry.slug,
+        period: entry.period,
+        roleTitle: entry.title,
+      });
+    }
+  }
+  return projects;
+}
+
+export function getProjectBySlug(
+  slug: string,
+): { project: ProjectWithContext; career: TimelineEntry } | undefined {
+  for (const entry of CAREER_ENTRIES) {
+    const p = (entry.projects ?? []).find((pr) => pr.slug === slug);
+    if (p) {
+      const project: ProjectWithContext = {
+        ...p,
+        company: entry.company,
+        companySlug: entry.slug,
+        period: entry.period,
+        roleTitle: entry.title,
+      };
+      return { project, career: entry };
+    }
+  }
+  return undefined;
+}

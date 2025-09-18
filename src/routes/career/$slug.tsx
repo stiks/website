@@ -1,6 +1,7 @@
 import { createFileRoute, Link } from '@tanstack/react-router';
 
 import { SectionHeading } from '@/lib/components/section-heading';
+import { TechPill } from '@/lib/components/tech-pill';
 import { getCareerEntryBySlug } from '@/lib/data/career';
 
 export const Route = createFileRoute('/career/$slug')({
@@ -70,24 +71,125 @@ function CareerDetail() {
             @ {entry.company}
           </span>
         </div>
-        <p className="leading-relaxed text-zinc-700 dark:text-zinc-300">
-          {entry.description}
-        </p>
+        {entry.description && (
+          <p className="leading-relaxed text-zinc-700 dark:text-zinc-300">
+            {entry.description}
+          </p>
+        )}
+
+        {entry.responsibilities?.length ? (
+          <div className="mt-6">
+            <h3 className="text-sm font-semibold text-zinc-800 dark:text-zinc-200 mb-2">
+              Key responsibilities
+            </h3>
+            <ul className="list-disc pl-5 space-y-2 text-zinc-700 dark:text-zinc-300">
+              {entry.responsibilities.map((r) => (
+                <li key={r.title} className="leading-relaxed">
+                  <div className="font-medium text-zinc-900 dark:text-zinc-100">
+                    {r.title}
+                  </div>
+                  {r.description && (
+                    <p className="text-sm text-zinc-600 dark:text-zinc-400">
+                      {r.description}
+                    </p>
+                  )}
+                </li>
+              ))}
+            </ul>
+          </div>
+        ) : null}
+
+        {entry.cases?.length ? (
+          <div className="mt-6">
+            <h3 className="text-sm font-semibold text-zinc-800 dark:text-zinc-200 mb-2">
+              Case studies
+            </h3>
+            <div className="flex flex-col gap-3">
+              {entry.cases.map((c) => (
+                <a
+                  key={c.title}
+                  href={c.url}
+                  target="_blank"
+                  rel="noreferrer noopener"
+                  className="group rounded-lg border border-zinc-200/70 dark:border-zinc-800/80 bg-white/70 dark:bg-zinc-900/50 p-3 hover:shadow-md transition"
+                >
+                  <div className="font-semibold text-zinc-900 dark:text-zinc-100">
+                    {c.title}
+                  </div>
+                  {c.description && (
+                    <p className="mt-1 text-sm text-zinc-600 dark:text-zinc-400">
+                      {c.description}
+                    </p>
+                  )}
+                </a>
+              ))}
+            </div>
+          </div>
+        ) : null}
+
+        {entry.projects?.length ? (
+          <div className="mt-6">
+            <h3 className="text-sm font-semibold text-zinc-800 dark:text-zinc-200 mb-2">
+              Projects
+            </h3>
+            <div className="flex flex-col gap-3">
+              {entry.projects.map((p) => (
+                <div
+                  key={p.slug}
+                  className="group rounded-lg border border-zinc-200/70 dark:border-zinc-800/80 border-l-2 border-l-emerald-500 bg-white/70 dark:bg-zinc-900/50 p-3 transition-shadow hover:shadow-md hover:bg-white/80 dark:hover:bg-zinc-900/60"
+                >
+                  <div className="flex items-center gap-2">
+                    <span className="font-semibold text-zinc-900 dark:text-zinc-100">
+                      {p.name}
+                    </span>
+                    {p.dead && (
+                      <span className="rounded-full bg-zinc-100 dark:bg-zinc-800 px-2 py-0.5 text-[10px] font-medium text-zinc-600 dark:text-zinc-300 ring-1 ring-zinc-200/70 dark:ring-zinc-700/60">
+                        Archived
+                      </span>
+                    )}
+                  </div>
+                  {p.description && (
+                    <p className="mt-1 text-sm text-zinc-600 dark:text-zinc-400">
+                      {p.description}
+                    </p>
+                  )}
+                  {p.technologies?.length ? (
+                    <div className="mt-2 flex flex-wrap gap-1.5">
+                      {p.technologies.map((tech) => (
+                        <TechPill key={tech} label={tech} />
+                      ))}
+                    </div>
+                  ) : null}
+                  <div className="mt-2">
+                    <Link
+                      to="/projects/$project"
+                      params={{ project: p.slug }}
+                      className="group inline-flex items-center gap-1.5 rounded bg-zinc-50/80 dark:bg-zinc-800/40 px-2.5 py-1 text-xs font-medium text-zinc-700 dark:text-zinc-200 ring-1 ring-zinc-200/80 dark:ring-zinc-700/60 hover:bg-zinc-100 dark:hover:bg-zinc-800 transition-colors"
+                    >
+                      View details
+                      <span
+                        className="transition-transform group-hover:translate-x-0.5"
+                        aria-hidden
+                      >
+                        →
+                      </span>
+                    </Link>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        ) : null}
 
         <div className="mt-6">
           <h3 className="text-sm font-semibold text-zinc-800 dark:text-zinc-200 mb-2">
             Technologies
           </h3>
-          <ul className="flex flex-wrap gap-2">
+          <div className="flex flex-wrap gap-2">
             {entry.technologies.map((t) => (
-              <li
-                key={t}
-                className="px-2.5 py-1 rounded-full text-xs font-medium bg-emerald-50 text-emerald-700 ring-1 ring-emerald-200/60 dark:bg-emerald-950/30 dark:text-emerald-300 dark:ring-emerald-900/50"
-              >
-                {t}
-              </li>
+              <TechPill key={t} label={t} />
             ))}
-          </ul>
+          </div>
         </div>
       </article>
     </section>
