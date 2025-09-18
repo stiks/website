@@ -7,10 +7,10 @@ export function TimelineItem({ entry }: { entry: TimelineEntry }) {
   return (
     <div className="relative">
       <span
-        className="pointer-events-none absolute left-3 top-5 sm:top-6 h-2.5 w-2.5 sm:h-3 sm:w-3 -translate-x-1/2 rounded-full bg-emerald-500 ring-2 sm:ring-4 ring-emerald-100 dark:ring-emerald-900/30 shadow"
+        className="hidden sm:block pointer-events-none absolute left-3 top-5 sm:top-6 h-2.5 w-2.5 sm:h-3 sm:w-3 -translate-x-1/2 rounded-full bg-emerald-500 ring-2 sm:ring-4 ring-emerald-100 dark:ring-emerald-900/30 shadow"
         aria-hidden
       />
-      <div className="ml-7 sm:ml-8 rounded-xl border border-zinc-200/70 dark:border-zinc-800/80 bg-white/70 dark:bg-zinc-900/50 backdrop-blur-sm shadow-sm hover:shadow-md transition-shadow p-3 sm:p-4">
+      <div className="ml-0 sm:ml-8 rounded-xl border border-zinc-200/70 dark:border-zinc-800/80 bg-white/70 dark:bg-zinc-900/50 backdrop-blur-sm shadow-sm hover:shadow-md transition-shadow p-3 sm:p-4">
         <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-2 sm:gap-3 mb-2 sm:mb-3">
           <div className="min-w-0 flex flex-wrap items-center gap-x-3 gap-y-1">
             <span className="text-zinc-500 dark:text-zinc-400 font-medium">
