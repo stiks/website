@@ -55,9 +55,11 @@ export function TimelineItem({ entry }: { entry: TimelineEntry }) {
             <div className="leading-relaxed text-zinc-700 dark:text-zinc-300">
               Key responsibilities
             </div>
-            {entry.responsibilities?.map((r) => (
-              <span key={r.title}>{r.title} </span>
-            ))}
+            <ul className="list-disc pl-5 text-zinc-700 dark:text-zinc-300">
+              {entry.responsibilities?.map((r) => (
+                <li key={r.title}>{r.title}</li>
+              ))}
+            </ul>
           </>
         )}
         {entry.projects && entry.projects?.length > 0 && (
