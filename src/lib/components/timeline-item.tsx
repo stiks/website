@@ -43,11 +43,33 @@ export function TimelineItem({ entry }: { entry: TimelineEntry }) {
             </span>
           </Link>
         </div>
-        <div className="space-y-2 mb-3">
-          <div className="leading-relaxed text-zinc-700 dark:text-zinc-300 text-sm">
-            {entry.description}
+        {entry.description && (
+          <div className="space-y-2 mb-3">
+            <div className="leading-relaxed text-zinc-700 dark:text-zinc-300">
+              {entry.description}
+            </div>
           </div>
-        </div>
+        )}
+        {entry.responsibilities && entry.responsibilities?.length > 0 && (
+          <>
+            <div className="leading-relaxed text-zinc-700 dark:text-zinc-300">
+              Key responsibilities
+            </div>
+            {entry.responsibilities?.map((r) => (
+              <span key={r.title}>{r.title} </span>
+            ))}
+          </>
+        )}
+        {entry.projects && entry.projects?.length > 0 && (
+          <>
+            <div className="leading-relaxed text-zinc-700 dark:text-zinc-300">
+              Projects
+            </div>
+            {entry.projects?.map((p) => (
+              <span key={p.name}>{p.name} </span>
+            ))}
+          </>
+        )}
         <div className="mt-3 flex flex-wrap gap-2">
           {entry.technologies.map((tech) => (
             <TechPill key={tech} label={tech} />
