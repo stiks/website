@@ -1,7 +1,7 @@
 import { Link } from '@tanstack/react-router';
 
 import { TechPill } from '@/lib/components/tech-pill';
-import type { TimelineEntry } from '@/lib/data/career.ts';
+import type { TimelineEntry } from '@/lib/data/career';
 
 export function TimelineItem({ entry }: { entry: TimelineEntry }) {
   return (
@@ -46,7 +46,7 @@ export function TimelineItem({ entry }: { entry: TimelineEntry }) {
         )}
         {entry.responsibilities && entry.responsibilities?.length > 0 && (
           <>
-            <div className="mb-1 text-sm font-semibold uppercase tracking-wide text-zinc-600 dark:text-zinc-400">
+            <div className="mb-1 py-2 text-sm font-semibold uppercase tracking-wide text-zinc-600 dark:text-zinc-400">
               Key responsibilities
             </div>
             <ul className="list-disc pl-5 space-y-2 text-zinc-700 dark:text-zinc-300">
@@ -67,7 +67,7 @@ export function TimelineItem({ entry }: { entry: TimelineEntry }) {
         )}
         {entry.projects && entry.projects?.length > 0 && (
           <>
-            <div className="mb-1 text-sm font-semibold uppercase tracking-wide text-zinc-600 dark:text-zinc-400">
+            <div className="mb-1 py-2 text-sm font-semibold uppercase tracking-wide text-zinc-600 dark:text-zinc-400">
               Projects
             </div>
             <div className="flex flex-col gap-3">

@@ -6,6 +6,13 @@ export interface Project {
   slug: string;
 }
 
+export interface CaseStudy {
+  title: string;
+  url: string;
+  image?: string;
+  description?: string;
+}
+
 export interface Responsibility {
   title: string;
   description?: string;
@@ -20,6 +27,7 @@ export interface TimelineEntry {
   slug: string;
   projects?: Array<Project>;
   responsibilities?: Array<Responsibility>;
+  cases?: Array<CaseStudy>;
 }
 
 export const CAREER_ENTRIES: Array<TimelineEntry> = [
@@ -31,6 +39,15 @@ export const CAREER_ENTRIES: Array<TimelineEntry> = [
       'As Head of Engineering, I led the technical and strategic transformation of an AI-driven proof-of-concept into a commercially successful, multi-million-dollar rail inspection system. I built the engineering organization from the ground up, establishing the teams, processes, and technology to enable rapid and sustainable business growth.',
     technologies: ['Golang', 'Python', 'PostgreSQL', 'Even Driven', 'GCP'],
     slug: 'crosstech',
+    cases: [
+      {
+        title: 'Google',
+        url: 'goo.gle/4pt6J5y',
+        image: '/assets/images/case-studies/google.png',
+        description:
+          'CrossTech uses AI & scalable infrastructure to revolutionise railway maintenance. Its solution cuts unplanned service interruptions by 30% and speeds AI model development by 50%, making transport networks safer & more efficient.',
+      },
+    ],
     projects: [
       {
         name: 'Hubble',
