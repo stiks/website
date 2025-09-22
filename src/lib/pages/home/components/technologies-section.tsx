@@ -96,7 +96,7 @@ export const TechnologiesSection = ({
 }: TechnologiesSectionProps) => {
   return (
     <section className={`mx-auto p-4 ${className || ''}`}>
-      <SectionHeading id="technologies">Technologies</SectionHeading>
+      <SectionHeading>Technologies</SectionHeading>
 
       <div className="grid gap-1 sm:gap-2 grid-cols-5 xs:grid-cols-6 sm:grid-cols-7 md:grid-cols-8 lg:grid-cols-9 xl:grid-cols-8 2xl:grid-cols-9">
         {technologies.map((technology) => (
