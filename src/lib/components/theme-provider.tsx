@@ -59,7 +59,6 @@ export function ThemeProvider({
       mql.addEventListener('change', handler);
     } else {
       // Safari
-      // @ts-ignore @ts-expect-error - legacy API fallback
       mql.addListener(handler);
     }
 
@@ -68,7 +67,6 @@ export function ThemeProvider({
         mql.removeEventListener('change', handler);
       } else {
         // Safari
-        // @ts-ignore @ts-expect-error - legacy API fallback
         mql.removeListener(handler);
       }
     };
