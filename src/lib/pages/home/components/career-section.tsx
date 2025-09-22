@@ -22,7 +22,7 @@ export const CareerSection = ({ className, ...props }: CareerSectionProps) => {
       {...props}
     >
       <div className="flex items-center justify-between mb-4">
-        <SectionHeading id="career">Career Timeline</SectionHeading>
+        <SectionHeading>Career Timeline</SectionHeading>
         <Link
           to="/career"
           className="inline-flex items-center gap-1 rounded-md px-3 py-1.5 text-sm font-medium text-emerald-800 dark:text-emerald-200 ring-1 ring-emerald-300/70 dark:ring-emerald-800/60 hover:bg-emerald-50/80 dark:hover:bg-emerald-950/30 transition-colors"
@@ -38,8 +38,13 @@ export const CareerSection = ({ className, ...props }: CareerSectionProps) => {
           aria-hidden
         />
         <div className="space-y-6">
-          {CAREER_ENTRIES.slice(0, 2).map((entry) => (
-            <TimelineItem key={entry.slug} entry={entry} />
+          {CAREER_ENTRIES.slice(0, 2).map((entry, idx) => (
+            <div
+              key={entry.slug}
+              className={idx === 1 ? 'hidden sm:block' : ''}
+            >
+              <TimelineItem entry={entry} />
+            </div>
           ))}
         </div>
       </div>
