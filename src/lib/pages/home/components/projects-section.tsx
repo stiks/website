@@ -7,7 +7,7 @@ interface ProjectsSectionProps {
 export const ProjectsSection = ({ className }: ProjectsSectionProps) => {
   return (
     <section className={`mx-auto p-4 py-8 relative ${className || ''}`}>
-      <SectionHeading id="projects">Projects</SectionHeading>
+      <SectionHeading>Projects</SectionHeading>
     </section>
   );
 };

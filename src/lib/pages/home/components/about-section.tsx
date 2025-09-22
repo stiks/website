@@ -16,7 +16,7 @@ export const AboutSection = ({ className }: AboutProps) => {
 
   return (
     <section className={`mx-auto p-4 ${className || ''}`}>
-      <SectionHeading id="about">About Me</SectionHeading>
+      <SectionHeading>About Me</SectionHeading>
       <div className="mb-4">
         <p>
           A strategic and results-driven technology leader with over a decade of

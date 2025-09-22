@@ -1,16 +1,16 @@
+import type React from 'react';
+
 interface SectionHeadingProps {
   children: React.ReactNode;
   className?: string;
-  id?: string;
 }
 
 export const SectionHeading = ({
   children,
   className,
-  id,
 }: SectionHeadingProps) => {
   return (
-    <div className="mb-4" id={id}>
+    <div className="mb-4">
       <h2
         className={`text-xl font-semibold uppercase tracking-wider text-secondary font-heading ${className || ''}`}
       >

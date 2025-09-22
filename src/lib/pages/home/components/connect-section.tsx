@@ -7,7 +7,7 @@ interface ConnectSectionProps {
 export const ConnectSection = ({ className }: ConnectSectionProps) => {
   return (
     <section className={`mx-auto p-4 ${className || ''}`}>
-      <SectionHeading id="contact">Let's connect</SectionHeading>
+      <SectionHeading>Let's connect</SectionHeading>
 
       <div className="space-y-4 flex flex-col items-center">
         <div>
