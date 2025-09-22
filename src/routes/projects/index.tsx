@@ -13,7 +13,7 @@ function ProjectsIndex() {
   return (
     <section className="max-w-5xl mx-auto p-4 py-6 relative bg-gradient-to-br from-slate-50 to-white dark:from-zinc-900 dark:to-zinc-950 rounded-2xl">
       <div className="flex items-center justify-between mb-4">
-        <SectionHeading id="projects-index">Projects</SectionHeading>
+        <SectionHeading>Projects</SectionHeading>
         <Link
           to="/"
           className="inline-flex items-center gap-1 rounded-md px-3 py-1.5 text-sm font-medium text-zinc-700 dark:text-zinc-200 ring-1 ring-zinc-300/70 dark:ring-zinc-800/60 hover:bg-zinc-50/80 dark:hover:bg-zinc-900/30 transition-colors"
