@@ -14,9 +14,7 @@ function ProjectDetail() {
   if (!result) {
     return (
       <section className="mx-auto p-4 py-6">
-        <SectionHeading id="project-not-found">
-          Project not found
-        </SectionHeading>
+        <SectionHeading>Project not found</SectionHeading>
         <p className="text-zinc-600 dark:text-zinc-300 mt-2">
           We couldn&apos;t find that project. It may have been moved or updated.
         </p>
@@ -37,7 +35,7 @@ function ProjectDetail() {
   return (
     <section className="max-w-5xl mx-auto p-4 py-6 relative bg-gradient-to-br from-slate-50 to-white dark:from-zinc-900 dark:to-zinc-950 rounded-2xl">
       <div className="flex items-center justify-between mb-4">
-        <SectionHeading id="project-detail">{project.name}</SectionHeading>
+        <SectionHeading>{project.name}</SectionHeading>
         <div className="flex gap-2">
           <Link
             to="/career/$slug"

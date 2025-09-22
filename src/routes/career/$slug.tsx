@@ -15,7 +15,7 @@ function CareerDetail() {
   if (!entry) {
     return (
       <section className="mx-auto p-4 py-6">
-        <SectionHeading id="career-not-found">Role not found</SectionHeading>
+        <SectionHeading>Role not found</SectionHeading>
         <p className="text-zinc-600 dark:text-zinc-300 mt-2">
           We couldn&apos;t find that role. It may have been moved or updated.
         </p>
@@ -40,7 +40,7 @@ function CareerDetail() {
   return (
     <section className="mx-auto p-4 py-6 relative bg-gradient-to-br from-slate-50 to-white dark:from-zinc-900 dark:to-zinc-950 rounded-2xl">
       <div className="flex items-center justify-between mb-4">
-        <SectionHeading id="career-role">
+        <SectionHeading>
           {entry.title} @ {entry.company}
         </SectionHeading>
         <div className="flex gap-2">
