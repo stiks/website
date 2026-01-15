@@ -1,9 +1,12 @@
+import type { ProjectComponentKey } from './project-components';
+
 export interface Project {
   name: string;
   description?: string;
   technologies?: Array<string>;
   dead?: boolean;
   slug: string;
+  component?: ProjectComponentKey;
 }
 
 export interface CaseStudy {
@@ -54,18 +57,21 @@ export const CAREER_ENTRIES: Array<TimelineEntry> = [
         slug: 'hubble',
         description:
           'Led the re-architecture of the main product from a Laravel prototype to cloud native containerized system. Implemented a decoupled architecture and automated deployments, delivering near-real-time analytics for critical rail safety',
+        component: 'hubble',
       },
       {
         name: 'Poler',
         slug: 'poler',
         description:
           'Directed the design and development of a real-time train tracking and alerting system processing over 10,000 notifications per minute, enhancing operational response with instant alerts. Co-author on pattern',
+        component: 'poler',
       },
       {
         name: 'CrossFreight',
         slug: 'crossfreight',
         description:
           'Oversaw the creation of a freight analytics platform to monitor over 16 million events annually, providing essential data for operational compliance and performance monitoring',
+        component: 'crossfreight',
       },
     ],
     responsibilities: [

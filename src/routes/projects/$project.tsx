@@ -2,6 +2,7 @@ import { createFileRoute, Link } from '@tanstack/react-router';
 
 import { SectionHeading } from '@/lib/components/section-heading';
 import { getProjectBySlug } from '@/lib/data/career';
+import { PROJECT_COMPONENTS } from '@/lib/data/project-components';
 
 export const Route = createFileRoute('/projects/$project')({
   component: ProjectDetail,
@@ -32,6 +33,41 @@ function ProjectDetail() {
 
   const { project, career } = result;
 
+  // Get custom component from registry if specified
+  const CustomComponent = project.component
+    ? PROJECT_COMPONENTS[project.component]
+    : null;
+
+  // Render custom component if available
+  if (CustomComponent) {
+    return (
+      <>
+        <section className="max-w-5xl mx-auto p-4 py-6">
+          <div className="flex items-center justify-between mb-4">
+            <SectionHeading>{project.name}</SectionHeading>
+            <div className="flex gap-2">
+              <Link
+                to="/career/$slug"
+                params={{ slug: career.slug }}
+                className="inline-flex items-center gap-1 rounded-md px-3 py-1.5 text-sm font-medium text-emerald-800 dark:text-emerald-200 ring-1 ring-emerald-300/70 dark:ring-emerald-800/60 hover:bg-emerald-50/80 dark:hover:bg-emerald-950/30 transition-colors"
+              >
+                {career.company}
+              </Link>
+              <Link
+                to="/"
+                className="inline-flex items-center gap-1 rounded-md px-3 py-1.5 text-sm font-medium text-zinc-700 dark:text-zinc-200 ring-1 ring-zinc-300/70 dark:ring-zinc-800/60 hover:bg-zinc-50/80 dark:hover:bg-zinc-900/30 transition-colors"
+              >
+                Home
+              </Link>
+            </div>
+          </div>
+        </section>
+        <CustomComponent />
+      </>
+    );
+  }
+
+  // Default project template
   return (
     <section className="max-w-5xl mx-auto p-4 py-6 relative bg-gradient-to-br from-slate-50 to-white dark:from-zinc-900 dark:to-zinc-950 rounded-2xl">
       <div className="flex items-center justify-between mb-4">
