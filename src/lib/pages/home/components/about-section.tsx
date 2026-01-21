@@ -2,12 +2,15 @@ import { useState } from 'react';
 
 import { ChevronDownIcon } from '@/lib/components/chevron-down-icon';
 import { SectionHeading } from '@/lib/components/section-heading';
+import type { RoleData } from '@/lib/data/roles';
+import { guid } from '@/lib/utils/uuid.ts';
 
 interface AboutProps {
   className?: string;
+  roleData: RoleData;
 }
 
-export const AboutSection = ({ className }: AboutProps) => {
+export const AboutSection = ({ className, roleData }: AboutProps) => {
   const [isExpanded, setIsExpanded] = useState(false);
 
   const toggleExpanded = () => {
@@ -18,21 +21,9 @@ export const AboutSection = ({ className }: AboutProps) => {
     <section className={`mx-auto p-4 ${className || ''}`}>
       <SectionHeading>About Me</SectionHeading>
       <div className="mb-4">
-        <p>
-          Hands-on Software Engineering leader with 14+ years of experience
-          building, scaling, and operating distributed, high-availability
-          systems in data-intensive and regulated environments. Strong bias
-          toward execution: designs systems, writes production code, reviews
-          critical paths, and owns delivery end-to-end.
-        </p>
-        <p>
-          Deep expertise in backend services, APIs, cloud infrastructure, and
-          platform reliability, with practical full-stack capability and
-          increasing focus on AI-assisted development workflows. Experienced
-          working closely with founders and CTOs in scale-up environments, with
-          a natural progression toward Head of Engineering as teams and systems
-          mature.
-        </p>
+        {roleData.about.map((paragraph) => (
+          <p key={guid()}>{paragraph}</p>
+        ))}
       </div>
       <div
         className={`space-y-4 overflow-hidden transition-all duration-500 ease-in mb-2 ${

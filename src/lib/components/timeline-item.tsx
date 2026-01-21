@@ -2,8 +2,19 @@ import { Link } from '@tanstack/react-router';
 
 import { TechPill } from '@/lib/components/tech-pill';
 import type { TimelineEntry } from '@/lib/data/career';
+import type { RoleType } from '@/lib/data/roles';
 
-export function TimelineItem({ entry }: { entry: TimelineEntry }) {
+export function TimelineItem({
+  entry,
+  role,
+}: {
+  entry: TimelineEntry;
+  role?: RoleType;
+}) {
+  const filteredResponsibilities = role
+    ? entry.responsibilities?.filter((r) => r.role === role)
+    : entry.responsibilities;
+
   return (
     <div className="relative">
       <span
@@ -44,13 +55,13 @@ export function TimelineItem({ entry }: { entry: TimelineEntry }) {
             </div>
           </div>
         )}
-        {entry.responsibilities && entry.responsibilities?.length > 0 && (
+        {filteredResponsibilities && filteredResponsibilities?.length > 0 && (
           <>
             <div className="mb-1 py-2 text-xs sm:text-sm font-semibold uppercase tracking-wide text-zinc-600 dark:text-zinc-400">
               Key responsibilities
             </div>
             <ul className="list-disc pl-4 sm:pl-5 space-y-1.5 sm:space-y-2 text-zinc-700 dark:text-zinc-300">
-              {entry.responsibilities?.map((r) => (
+              {filteredResponsibilities?.map((r) => (
                 <li key={r.title} className="leading-relaxed">
                   <div className="font-medium text-zinc-900 dark:text-zinc-100">
                     {r.title}
@@ -74,7 +85,7 @@ export function TimelineItem({ entry }: { entry: TimelineEntry }) {
               {entry.projects?.map((p) => (
                 <div
                   key={p.name}
-                  className="group rounded-lg border border-zinc-200/70 dark:border-zinc-800/80 border-l-2 border-l-emerald-500 bg-white/70 dark:bg-zinc-900/50 p-3 transition-shadow hover:shadow-md hover:bg-white/80 dark:hover:bg-zinc-900/60"
+                  className="group rounded-md border border-zinc-200/70 dark:border-zinc-800/80 border-l-2 border-l-emerald-500 bg-white/70 dark:bg-zinc-900/50 p-3 transition-shadow hover:shadow-md hover:bg-white/80 dark:hover:bg-zinc-900/60"
                 >
                   <div className="flex flex-wrap items-center gap-2">
                     <span className="font-semibold text-zinc-900 dark:text-zinc-100">

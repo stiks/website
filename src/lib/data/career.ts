@@ -19,6 +19,7 @@ export interface CaseStudy {
 export interface Responsibility {
   title: string;
   description?: string;
+  role: string;
 }
 
 export interface TimelineEntry {
@@ -77,36 +78,43 @@ export const CAREER_ENTRIES: Array<TimelineEntry> = [
     responsibilities: [
       {
         title: 'Team Growth & Culture',
+        role: 'head',
         description:
           'Scaled the engineering organization from 0 to 25 professionals, led the full recruitment lifecycle and established a high-performance, product-focused culture. Encourage  an environment of continuous learning that attracted and retained top-tier talent',
       },
       {
         title: 'Design Systems at Scale',
+        role: 'head',
         description:
           'Lead the re-architecture of a complex, AI/ML-driven product handling over 10,000 hours of video data monthly. Engineered the system for significant scale and reliability, transforming it from a PoC into a market-leading platform',
       },
       {
         title: 'Process & Agile Transformation',
+        role: 'head',
         description:
           'Established and implemented a scalable, agile development framework, including robust code review, CI/CD pipelines, and automated testing protocols. This enabled the team to scale efficiently while maintaining high-quality output and performance',
       },
       {
         title: 'Scalable & Resilient Architecture',
+        role: 'head',
         description:
           "Designed and delivered a highly scalable cloud native infrastructure on GCP that supported the company's growth from a small startup to a high-growth SME, ensuring system reliability and performance",
       },
       {
         title: 'Product-Led Strategy',
+        role: 'head',
         description:
           'Directed product strategy within a product-led business, aligning the technology roadmap with commercial objectives to ensure strong market fit. Played a key role in scaling the company, contributing directly to its transformation into a high-growth SME',
       },
       {
         title: 'Cross-Functional Leadership',
+        role: 'head',
         description:
           'Championed close collaboration between engineering, product, sales, and marketing teams to ensure technical developments directly addressed customer needs and supported key business goals',
       },
       {
         title: 'Innovation & Continuous Improvement',
+        role: 'head',
         description:
           'Drove the continuous optimization of AI/ML models and infrastructure, improving platform accuracy and efficiency to keep the product ahead of industry competitors',
       },
@@ -131,31 +139,37 @@ export const CAREER_ENTRIES: Array<TimelineEntry> = [
     responsibilities: [
       {
         title: 'Global Team Leadership',
+        role: 'head',
         description:
           'Managed and mentored 5 distributed teams of 50 technical professionals, encouraging a culture of quality, ownership, and continuous improvement across all squads',
       },
       {
         title: 'Platform Modernization & Delivery',
+        role: 'head',
         description:
           'Led the end-to-end lifecycle of a highly customizable, white-label mobile platform. Drove the migration from a monolithic PHP application to a modern, microservices-based architecture using Go, Kubernetes, and GCP',
       },
       {
         title: 'Process Transformation & Automation',
+        role: 'head',
         description:
           'Championed and implemented modern DevOps and CI/CD practices across the organization. Achieved 95% automated test coverage and established a zero-downtime deployment strategy, dramatically improving quality and release velocity',
       },
       {
         title: 'Strategic Cost Reduction',
+        role: 'head',
         description:
           'Drove operating costs down by 50% over two years by migrating legacy infrastructure to the cloud (AWS/GCP), optimizing vendor contracts, and leveraging automation, all while improving service levels',
       },
       {
         title: 'Technical & Architectural Strategy',
+        role: 'head',
         description:
           'Established the vision for the company’s system architecture, reusable codebases, and development tools. Guided the organization through three major infrastructure migrations with no downtime',
       },
       {
         title: 'Stakeholder Management',
+        role: 'head',
         description:
           'Acted as the key technical advisor to business stakeholders, translating company goals into actionable engineering plans. Consistently delivered complex projects on time and within budget',
       },
@@ -164,10 +178,13 @@ export const CAREER_ENTRIES: Array<TimelineEntry> = [
       {
         name: 'QHub',
         slug: 'qhub',
+        description: 'Global concierge platform management system',
       },
       {
         name: 'Q Apps',
         slug: 'qapps',
+        description:
+          'White-label mobile applications for luxury concierge services',
       },
     ],
   },

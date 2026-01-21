@@ -1,11 +1,16 @@
 import { GitHubIcon } from '@/lib/components/github-icon.tsx';
 import { LinkedInIcon } from '@/lib/components/linkedin-icon.tsx';
+import type { RoleData } from '@/lib/data/roles';
 
 interface ProfileSectionProps {
   className?: string;
+  roleData: RoleData;
 }
 
-export const ProfileSection = ({ className }: ProfileSectionProps) => {
+export const ProfileSection = ({
+  className,
+  roleData,
+}: ProfileSectionProps) => {
   return (
     <section className={`mx-auto p-4 py-8 relative ${className || ''}`}>
       <div
@@ -22,10 +27,7 @@ export const ProfileSection = ({ className }: ProfileSectionProps) => {
                 </div>
               </h1>
               <p className="text-muted-foreground max-w-md font-light">
-                executive technology leader with 14+ years building and scaling
-                high-performing engineering organizations, defining product and
-                platform strategy, and owning architectural direction for
-                mission-critical systems.
+                {roleData.profileDescription}
               </p>
               <span className="relative mt-2 text-xs md:text-sm font-medium inline-flex items-center gap-1 text-black-400 dark:text-zinc-200">
                 <svg
@@ -51,7 +53,7 @@ export const ProfileSection = ({ className }: ProfileSectionProps) => {
           <div className="flex items-center mt-4 gap-2">
             <a
               className="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 border border-input bg-background shadow-sm hover:bg-accent hover:text-accent-foreground h-8 w-20 "
-              href="https://drive.google.com/file/d/1SEkPmdM_brM5kHnVS7-P4-nS2PlHZlON/view"
+              href={roleData.cvLink}
               target="_blank"
               rel="noopener noreferrer"
               title="Open resume in a new tab"

@@ -4,14 +4,21 @@ import type React from 'react';
 import { SectionHeading } from '@/lib/components/section-heading';
 import { TimelineItem } from '@/lib/components/timeline-item';
 import { CAREER_ENTRIES } from '@/lib/data/career';
+import type { RoleType } from '@/lib/data/roles';
 
-type CareerSectionProps = React.ComponentPropsWithoutRef<'section'>;
+interface CareerSectionProps extends React.ComponentPropsWithoutRef<'section'> {
+  role: RoleType;
+}
 
 function cx(...classes: Array<string | undefined | false>) {
   return classes.filter(Boolean).join(' ');
 }
 
-export const CareerSection = ({ className, ...props }: CareerSectionProps) => {
+export const CareerSection = ({
+  className,
+  role,
+  ...props
+}: CareerSectionProps) => {
   return (
     <section
       className={cx(
@@ -43,7 +50,7 @@ export const CareerSection = ({ className, ...props }: CareerSectionProps) => {
               key={entry.slug}
               className={idx === 1 ? 'hidden sm:block' : ''}
             >
-              <TimelineItem entry={entry} />
+              <TimelineItem entry={entry} role={role} />
             </div>
           ))}
         </div>
