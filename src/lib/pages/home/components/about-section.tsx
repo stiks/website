@@ -19,13 +19,19 @@ export const AboutSection = ({ className }: AboutProps) => {
       <SectionHeading>About Me</SectionHeading>
       <div className="mb-4">
         <p>
-          A strategic and results-driven technology leader with over a decade of
-          experience in product-led businesses, building and scaling
-          high-performing engineering teams to deliver complex, large-scale
-          software solutions. Proven expertise in transforming proofs-of-concept
-          into commercially successful products, shaping a culture that attracts
-          and retains top talent, and driving significant business growth
-          through technical excellence.
+          Hands-on Software Engineering leader with 14+ years of experience
+          building, scaling, and operating distributed, high-availability
+          systems in data-intensive and regulated environments. Strong bias
+          toward execution: designs systems, writes production code, reviews
+          critical paths, and owns delivery end-to-end.
+        </p>
+        <p>
+          Deep expertise in backend services, APIs, cloud infrastructure, and
+          platform reliability, with practical full-stack capability and
+          increasing focus on AI-assisted development workflows. Experienced
+          working closely with founders and CTOs in scale-up environments, with
+          a natural progression toward Head of Engineering as teams and systems
+          mature.
         </p>
       </div>
       <div
@@ -34,8 +40,8 @@ export const AboutSection = ({ className }: AboutProps) => {
         }`}
       >
         <p>
-          I hold a Bachelor's degree in Computer Science from St. Petersburg
-          State Polytechnical University
+          I hold a Master’s Degree in Computer Science from St. Petersburg State
+          Polytechnical University
         </p>
         <p>
           When I'm not coding, I spend my time listening to music, reading
